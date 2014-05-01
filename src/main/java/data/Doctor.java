@@ -14,13 +14,22 @@ public class Doctor
     private Date dateOfBirth;
     private String gender;
     private String office;
+    private static int addId = 0;
+
+    public Doctor(String firstName, String surname)
+    {
+        this.id = addId++;
+        this.firstName = firstName;
+        this.surname = surname;
+    }
+
+    public Doctor()
+    {
+        this.id = addId++;
+    }
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getTitle() {

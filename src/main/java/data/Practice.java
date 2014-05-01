@@ -10,14 +10,16 @@ public class Practice
     private int id;
     private String name;
     private String telephone;
-    private ArrayList<Doctor> employedDoctors;
+    private ArrayList<Doctor> employedDoctors = new ArrayList<Doctor>();
+    private static int addId = 0;
+
+    public Practice()
+    {
+        this.id = addId++;
+    }
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -40,7 +42,19 @@ public class Practice
         return employedDoctors;
     }
 
-    public void setEmployedDoctors(ArrayList<Doctor> employedDoctors) {
-        this.employedDoctors = employedDoctors;
+    public void removeDoctor(Doctor doctor)
+    {
+            if (employedDoctors.contains(doctor))
+            {
+                employedDoctors.remove(doctor);
+            }
+    }
+
+    public void addDoctor(Doctor doctor)
+    {
+        if (!employedDoctors.contains(doctor))
+        {
+            employedDoctors.add(doctor);
+        }
     }
 }
