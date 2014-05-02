@@ -1,0 +1,11 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<testsuite name="MockTests" tests="5" failures="0" errors="0" timestamp="2014-05-02T17:29:45" hostname="Hotmilk" time="0.14">
+  <properties/>
+  <testcase name="testGetDoctors" classname="MockTests" time="0.05"/>
+  <testcase name="testGetDoctorFields" classname="MockTests" time="0.058"/>
+  <testcase name="testSetPracticeFields" classname="MockTests" time="0.014"/>
+  <testcase name="testSetDoctorFields" classname="MockTests" time="0.003"/>
+  <testcase name="testGetPracticeFields" classname="MockTests" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

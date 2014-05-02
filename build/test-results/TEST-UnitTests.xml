@@ -1,0 +1,14 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<testsuite name="UnitTests" tests="8" failures="0" errors="0" timestamp="2014-05-02T17:29:45" hostname="Hotmilk" time="0.017">
+  <properties/>
+  <testcase name="testCorrectDoctorAge" classname="UnitTests" time="0.001"/>
+  <testcase name="testNegativeDoctorAge" classname="UnitTests" time="0.0"/>
+  <testcase name="testAddDoctorDetails" classname="UnitTests" time="0.001"/>
+  <testcase name="testRemoveDoctor" classname="UnitTests" time="0.0"/>
+  <testcase name="testTryRemoveNonExistingDoctor" classname="UnitTests" time="0.0"/>
+  <testcase name="testAddDoctor" classname="UnitTests" time="0.0"/>
+  <testcase name="testTryAddExistingDoctor" classname="UnitTests" time="0.0"/>
+  <testcase name="testAddPracticeDetails" classname="UnitTests" time="0.009"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

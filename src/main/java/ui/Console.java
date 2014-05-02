@@ -12,7 +12,7 @@ public class Console
     {
         Practice GreenwichPractice = new Practice();
         GreenwichPractice.setName("Greenwich Practice");
-        //GreenwichPractice.setTelephone("01758493741");
+        GreenwichPractice.setTelephone("01758493741");
         GreenwichPractice.addDoctor(new Doctor("John", "Smith"));
         GreenwichPractice.getTelephone();
     }

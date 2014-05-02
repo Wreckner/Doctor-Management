@@ -56,7 +56,7 @@ public class Practice
 
     public void removeDoctor(Doctor doctor)
     {
-        assert employedDoctors.contains(doctor) : "Doctor must be in the list: value = " + employedDoctors.toString();
+        //assert employedDoctors.contains(doctor) : "Doctor must be in the list: value = " + employedDoctors.toString();
         assert doctor != null : "Doctor must not be null: value = " + doctor;
             if (employedDoctors.contains(doctor))
             {
@@ -67,7 +67,7 @@ public class Practice
 
     public void addDoctor(Doctor doctor)
     {
-        assert !employedDoctors.contains(doctor) : "Doctor must not be in the list: value = " + employedDoctors.toString();
+        //assert !employedDoctors.contains(doctor) : "Doctor must not be in the list: value = " + employedDoctors.toString();
         assert doctor != null : "Doctor must not be null: value = " + doctor;
         if (!employedDoctors.contains(doctor))
         {

@@ -135,12 +135,12 @@ public class MockTests
         doctors.add(new Doctor("Mary", "Smith"));
         doctors.add(new Doctor("Gary", "James"));
 
-        Mockito.when(practice.getId()).thenCallRealMethod();
+        Mockito.when(practice.getId()).thenReturn(1);
         Mockito.when(practice.getName()).thenReturn(testName);
         Mockito.when(practice.getTelephone()).thenReturn(testPhone);
         Mockito.when(practice.getEmployedDoctors()).thenReturn(doctors);
 
-        assertEquals(practice.getId(), 0);
+        assertEquals(practice.getId(), 1);
         assertEquals(practice.getName(), testName);
         assertEquals(practice.getTelephone(), testPhone);
         assertEquals(practice.getEmployedDoctors(), doctors);
