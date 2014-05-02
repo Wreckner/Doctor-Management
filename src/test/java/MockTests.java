@@ -23,7 +23,7 @@ public class MockTests
     private String testTitle = "Dr";
     private String testFirstName = "John";
     private String testSurname = "Smith";
-    private Date testDate = new Date(1398947758);
+    private Date testDate = new Date(126230400);
     private String testGender = "Male";
     private String testOffice = "C100";
     private String testName = "Greenwich Practice";
@@ -105,6 +105,7 @@ public class MockTests
         Mockito.when(doctor.getDateOfBirth()).thenReturn(testDate);
         Mockito.when(doctor.getGender()).thenReturn(testGender);
         Mockito.when(doctor.getOffice()).thenReturn(testOffice);
+        Mockito.when(doctor.getAge()).thenReturn(44);
 
         assertEquals(doctor.getId(), 0);
         assertEquals(doctor.getTitle(), testTitle);
@@ -113,6 +114,7 @@ public class MockTests
         assertEquals(doctor.getDateOfBirth(), testDate);
         assertEquals(doctor.getGender(), testGender);
         assertEquals(doctor.getOffice(), testOffice);
+        assertEquals(doctor.getAge(), 44);
 
         Mockito.verify(doctor).getId();
         Mockito.verify(doctor).getTitle();
@@ -121,7 +123,7 @@ public class MockTests
         Mockito.verify(doctor).getDateOfBirth();
         Mockito.verify(doctor).getGender();
         Mockito.verify(doctor).getOffice();
-
+        Mockito.verify(doctor).getAge();
 
     }
 
@@ -147,32 +149,5 @@ public class MockTests
         Mockito.verify(practice).getName();
         Mockito.verify(practice).getTelephone();
         Mockito.verify(practice).getEmployedDoctors();
-    }
-
-    @Test
-    public void testActualMethods()
-    {
-        Mockito.when(practice.getId()).thenCallRealMethod();
-    }
-
-    @Test
-    public void testAddDoctor()
-    {
-        Doctor james = new Doctor("Gary", "James");
-
-        ArrayList<Doctor> doctors = new ArrayList<Doctor>();
-        doctors.add(new Doctor(testFirstName, testSurname));
-        doctors.add(new Doctor("Mary", "Smith"));
-        doctors.add(james);
-
-        ArrayList<Doctor> doctors2 = new ArrayList<Doctor>();
-        doctors.add(new Doctor(testFirstName, testSurname));
-        doctors.add(new Doctor("Mary", "Smith"));
-    }
-
-    @Test
-    public void testRemoveDoctor()
-    {
-
     }
 }
