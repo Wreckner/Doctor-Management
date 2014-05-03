@@ -34,6 +34,12 @@ public class Doctor
         return id;
     }
 
+    public void setId(int id)
+    {
+        assert id != 0 : "Id must not be null: value = " + id;
+        this.id = id;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -73,11 +79,19 @@ public class Doctor
         this.dateOfBirth = dateOfBirth;
     }
 
+    /**
+     * Works out the age of the doctor using the date of birth. If the date calculated is less than 0, then
+     * the age is set to 0, else the estimated age is passed back to the calling class.
+     *
+     * @return the age of the doctor
+     */
     public int getAge()
     {
         assert dateOfBirth != null : "Date must not be null: value = " + dateOfBirth;
+
         Calendar birthDate = new GregorianCalendar();
         birthDate.setTime(dateOfBirth);
+
         Calendar todayDate = new GregorianCalendar();
 
         int factor = 0;

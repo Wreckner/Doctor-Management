@@ -26,6 +26,12 @@ public class Practice
         return id;
     }
 
+    public void setId(int id)
+    {
+        assert id != 0 : "Id must not be null: value = " + id;
+        this.id = id;
+    }
+
     public String getName() {
         assert this.name != null : "Name must not be null: value = " + name;
         return name;
@@ -54,6 +60,12 @@ public class Practice
         return employedDoctors;
     }
 
+    /**
+     * If the doctor passed is an employed doctor at the practice, the doctor will be removed from the list of
+     * employed doctors, else the doctor won't be removed from the list as there not employed doctors
+     *
+     * @param doctor - the doctor to be removed from the list of employed doctors
+     */
     public void removeDoctor(Doctor doctor)
     {
         //assert employedDoctors.contains(doctor) : "Doctor must be in the list: value = " + employedDoctors.toString();
@@ -65,6 +77,12 @@ public class Practice
         assert !employedDoctors.contains(doctor) : "Doctor shouldn't be in the list: value = " + employedDoctors.toString();
     }
 
+    /**
+     * If the doctor passed isn't an employed doctor at the practice, the doctor will be added to the list of
+     * employed doctors, else the doctor won't be added to the list as they are already in the list
+     *
+     * @param doctor - the doctor to be added to list of employed doctors
+     */
     public void addDoctor(Doctor doctor)
     {
         //assert !employedDoctors.contains(doctor) : "Doctor must not be in the list: value = " + employedDoctors.toString();
