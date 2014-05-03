@@ -7,9 +7,7 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.mockito.invocation.InvocationOnMock;
 import org.mockito.runners.MockitoJUnitRunner;
-import org.mockito.stubbing.Answer;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -85,14 +83,14 @@ public class MockTests
         doctors.add(new Doctor("Mary", "Smith"));
         doctors.add(new Doctor("Gary", "James"));
 
-        Mockito.when(practice.getEmployedDoctors()).thenReturn(doctors);
-        ArrayList<Doctor> employedDoctors = practice.getEmployedDoctors();
-        Mockito.verify(practice).getEmployedDoctors();
+        Mockito.when(practice.getDoctors()).thenReturn(doctors);
+        ArrayList<Doctor> employedDoctors = practice.getDoctors();
+        Mockito.verify(practice).getDoctors();
         assertEquals(doctors, employedDoctors);
 
-        assertEquals(doctors.get(0), practice.getEmployedDoctors().get(0));
-        assertEquals(doctors.get(1), practice.getEmployedDoctors().get(1));
-        assertEquals(doctors.get(2), practice.getEmployedDoctors().get(2));
+        assertEquals(doctors.get(0), practice.getDoctors().get(0));
+        assertEquals(doctors.get(1), practice.getDoctors().get(1));
+        assertEquals(doctors.get(2), practice.getDoctors().get(2));
     }
 
     @Test
@@ -138,16 +136,16 @@ public class MockTests
         Mockito.when(practice.getId()).thenReturn(1);
         Mockito.when(practice.getName()).thenReturn(testName);
         Mockito.when(practice.getTelephone()).thenReturn(testPhone);
-        Mockito.when(practice.getEmployedDoctors()).thenReturn(doctors);
+        Mockito.when(practice.getDoctors()).thenReturn(doctors);
 
         assertEquals(practice.getId(), 1);
         assertEquals(practice.getName(), testName);
         assertEquals(practice.getTelephone(), testPhone);
-        assertEquals(practice.getEmployedDoctors(), doctors);
+        assertEquals(practice.getDoctors(), doctors);
 
         Mockito.verify(practice).getId();
         Mockito.verify(practice).getName();
         Mockito.verify(practice).getTelephone();
-        Mockito.verify(practice).getEmployedDoctors();
+        Mockito.verify(practice).getDoctors();
     }
 }

@@ -16,18 +16,13 @@ public class Doctor
     private Date dateOfBirth;
     private String gender;
     private String office;
-    private static int addId = 0;
+    private static int addId = 1; // Sets id for each new doctor object
 
     public Doctor(String firstName, String surname)
     {
         this.id = addId++;
         this.firstName = firstName;
         this.surname = surname;
-    }
-
-    public Doctor()
-    {
-        this.id = addId++;
     }
 
     public int getId() {

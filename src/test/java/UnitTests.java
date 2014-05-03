@@ -5,7 +5,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
@@ -37,8 +36,8 @@ public class UnitTests
 
         practice.addDoctor(doctor);
 
-        assertTrue(practice.getEmployedDoctors().contains(doctor));
-        assertEquals(1, practice.getEmployedDoctors().size());
+        assertTrue(practice.getDoctors().contains(doctor));
+        assertEquals(1, practice.getDoctors().size());
     }
 
     @Test
@@ -48,13 +47,13 @@ public class UnitTests
 
         practice.addDoctor(doctor);
 
-        assertTrue(practice.getEmployedDoctors().contains(doctor));
-        assertEquals(1, practice.getEmployedDoctors().size());
+        assertTrue(practice.getDoctors().contains(doctor));
+        assertEquals(1, practice.getDoctors().size());
 
         practice.removeDoctor(doctor);
 
-        assertTrue(!practice.getEmployedDoctors().contains(doctor));
-        assertEquals(0, practice.getEmployedDoctors().size());
+        assertTrue(!practice.getDoctors().contains(doctor));
+        assertEquals(0, practice.getDoctors().size());
     }
 
     @Test
@@ -64,12 +63,12 @@ public class UnitTests
 
         practice.addDoctor(doctor);
 
-        assertTrue(practice.getEmployedDoctors().contains(doctor));
-        assertEquals(1, practice.getEmployedDoctors().size());
+        assertTrue(practice.getDoctors().contains(doctor));
+        assertEquals(1, practice.getDoctors().size());
 
         practice.addDoctor(doctor);
 
-        assertEquals(1, practice.getEmployedDoctors().size());
+        assertEquals(1, practice.getDoctors().size());
 
     }
 
@@ -80,18 +79,18 @@ public class UnitTests
 
         practice.addDoctor(doctor);
 
-        assertTrue(practice.getEmployedDoctors().contains(doctor));
-        assertEquals(1, practice.getEmployedDoctors().size());
+        assertTrue(practice.getDoctors().contains(doctor));
+        assertEquals(1, practice.getDoctors().size());
 
         practice.removeDoctor(doctor);
 
-        assertTrue(!practice.getEmployedDoctors().contains(doctor));
-        assertEquals(0, practice.getEmployedDoctors().size());
+        assertTrue(!practice.getDoctors().contains(doctor));
+        assertEquals(0, practice.getDoctors().size());
 
         practice.removeDoctor(doctor);
 
-        assertTrue(!practice.getEmployedDoctors().contains(doctor));
-        assertEquals(0, practice.getEmployedDoctors().size());
+        assertTrue(!practice.getDoctors().contains(doctor));
+        assertEquals(0, practice.getDoctors().size());
     }
 
     @Test
@@ -126,7 +125,7 @@ public class UnitTests
 
         assertEquals(testName, practice.getName());
         assertEquals(testPhone, practice.getTelephone());
-        assertEquals(doctorList, practice.getEmployedDoctors());
+        assertEquals(doctorList, practice.getDoctors());
     }
 
     @Test

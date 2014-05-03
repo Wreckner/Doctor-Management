@@ -5,16 +5,14 @@ import java.util.ArrayList;
 
 /**
  * Created by Natasha Whitter on 01/05/2014.
- * @inv removeDoctor() implies employedDoctors.size() > 0
- * @inv addDoctor() implies employedDoctor.size() <= 0
  */
 public class Practice
 {
     private int id;
     private String name;
     private String telephone;
-    private ArrayList<Doctor> employedDoctors = new ArrayList<Doctor>();
-    private static int addId = 1;
+    private ArrayList<Doctor> doctors = new ArrayList<Doctor>();
+    private static int addId = 1; // Sets id for each new practice object
 
     public Practice()
     {
@@ -55,9 +53,9 @@ public class Practice
         this.telephone = telephone;
     }
 
-    public ArrayList<Doctor> getEmployedDoctors() {
-        assert employedDoctors != null : "Doctor list must not be null: value = " + employedDoctors.toString();
-        return employedDoctors;
+    public ArrayList<Doctor> getDoctors() {
+        assert doctors != null : "Doctor list must not be null: value = " + doctors.toString();
+        return doctors;
     }
 
     /**
@@ -68,13 +66,13 @@ public class Practice
      */
     public void removeDoctor(Doctor doctor)
     {
-        //assert employedDoctors.contains(doctor) : "Doctor must be in the list: value = " + employedDoctors.toString();
+        //assert doctors.contains(doctor) : "Doctor must be in the list: value = " + doctors.toString();
         assert doctor != null : "Doctor must not be null: value = " + doctor;
-            if (employedDoctors.contains(doctor))
+            if (doctors.contains(doctor))
             {
-                employedDoctors.remove(doctor);
+                doctors.remove(doctor);
             }
-        assert !employedDoctors.contains(doctor) : "Doctor shouldn't be in the list: value = " + employedDoctors.toString();
+        assert !doctors.contains(doctor) : "Doctor shouldn't be in the list: value = " + doctors.toString();
     }
 
     /**
@@ -85,13 +83,53 @@ public class Practice
      */
     public void addDoctor(Doctor doctor)
     {
-        //assert !employedDoctors.contains(doctor) : "Doctor must not be in the list: value = " + employedDoctors.toString();
+        //assert !doctors.contains(doctor) : "Doctor must not be in the list: value = " + doctors.toString();
         assert doctor != null : "Doctor must not be null: value = " + doctor;
-        if (!employedDoctors.contains(doctor))
+        if (!doctors.contains(doctor))
         {
-            employedDoctors.add(doctor);
+            doctors.add(doctor);
         }
-        assert employedDoctors.contains(doctor) : "Doctor should be in the list value = " + employedDoctors.toString();
+        assert doctors.contains(doctor) : "Doctor should be in the list value = " + doctors.toString();
+    }
+
+    /**
+     * Checks the doctor list for all doctors who are older than the given age. If any are older, they are stored in
+     * an array until all doctors are checked, the array is then sent back to the calling class.
+     *
+     * @param age - the age for doctors to be checked if older
+     * @return array with doctors who are older than the age
+     */
+    public ArrayList<Doctor> getDoctorsOlderByAge(int age)
+    {
+        ArrayList<Doctor> doctors = new ArrayList<Doctor>();
+        for (Doctor doctor: this.doctors)
+        {
+            if (doctor.getAge() > age)
+            {
+                doctors.add(doctor);
+            }
+        }
+        return doctors;
+    }
+
+    /**
+     * Checks the doctor list for all doctors who are younger than the given age. If any are younger, they are stored in
+     * an array until all doctors are checked, the array is then sent back to the calling class.
+     *
+     * @param age - - the age for doctors to be checked if younger
+     * @return array with doctors who are younger than the age
+     */
+    public ArrayList<Doctor> getDoctorsYoungerByAge(int age)
+    {
+        ArrayList<Doctor> doctors = new ArrayList<Doctor>();
+        for (Doctor doctor: this.doctors)
+        {
+            if (doctor.getAge() < age)
+            {
+                doctors.add(doctor);
+            }
+        }
+        return doctors;
     }
 
     @Override
@@ -100,7 +138,7 @@ public class Practice
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", telephone='" + telephone + '\'' +
-                ", employedDoctors=" + employedDoctors +
+                ", doctors=" + doctors +
                 '}';
     }
 }
